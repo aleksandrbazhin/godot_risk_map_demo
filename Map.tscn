@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Area.gd" type="Script" id=1]
+[ext_resource path="res://1.png" type="Texture" id=2]
+[ext_resource path="res://2.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 24.3185, 83.4433 )
+skew = 4.37114e-08
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 60.1241, -4.41471 )
+skew = 4.37114e-08
+polygon = PoolVector2Array( -25.5831, -1.74212, -9.72829, -20.403, 14.6853, -21.3852, 14.8256, 18.8831, -8.3252, 17.6204 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( 54.6368, -5.38432 )
+skew = 4.37114e-08
+texture = ExtResource( 2 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 24.3185, 83.4433 )
+skew = 4.37114e-08
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+position = Vector2( 7.06421, -4.24786 )
+skew = 4.37114e-08
+polygon = PoolVector2Array( -18.5822, -21.9683, 27.136, -20.8003, 11.2848, -1.11143, 28.4709, 19.078, -18.4154, 20.4129 )
+
+[node name="Sprite" type="Sprite" parent="Area2D2"]
+position = Vector2( 11.9219, -4.88375 )
+skew = 4.37114e-08
+texture = ExtResource( 3 )
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_Area2D_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D2" to="Area2D2" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D2" to="Area2D2" method="_on_Area2D_mouse_exited"]
